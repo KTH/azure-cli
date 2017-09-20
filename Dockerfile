@@ -50,6 +50,12 @@ _python_argcomplete() {\n\
 complete -o nospace -F _python_argcomplete \"az\"\n\
 " > ~/.bashrc
 
+# Set CEST instead of UTC to avoid azure token expiry
+RUN apk add tzdata && \
+    cp /usr/share/zoneinfo/Europe/Stockholm /etc/localtime && \
+    echo "Europe/Stockholm" > /etc/timezone && \
+    apk del tzdata
+
 WORKDIR /
 
 CMD bash
