@@ -7,7 +7,7 @@
 #   Clone the repo then run 'docker build' with this Dockerfile file to get the latest versions of
 #   *all* CLI modules as in the Git repo.
 
-FROM python:3.5.2-alpine
+FROM python:2.7-alpine
 
 WORKDIR azure-cli
 COPY . /azure-cli
